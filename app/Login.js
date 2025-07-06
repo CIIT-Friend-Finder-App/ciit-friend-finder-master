@@ -33,7 +33,7 @@ export default function Login({ goTo }) {
             secureTextEntry
           />
           <Pressable style = {styles.logInBtn} onPress={() => goTo('swipe')} ><Text style = {styles.txtLogInBtn}>Log In</Text></Pressable>
-          <Pressable style = {styles.registerBtn} onPress={() => goTo('swipe')} ><Text style = {styles.txtRegisterBtn}>Create an account</Text></Pressable>
+          <Pressable style = {styles.registerBtn} onPress={() => goTo('register')} ><Text style = {styles.txtRegisterBtn}>Create an account</Text></Pressable>
         
         </View>
         
