@@ -8,7 +8,13 @@ SplashScreen.preventAutoHideAsync(); // to display splash screen while loading t
 
 export default function RootLayout() {
   const [loadingFont] = useFonts({
-    'Jost-Medium': require('../assets/fonts/Jost-Medium.ttf'),
+
+    'HelveticaNeueRoman': require('../assets/fonts/HelveticaNeueRoman.otf'),
+    'HelveticaNeueHeavy': require('../assets/fonts/HelveticaNeueHeavy.otf'),
+    'HelveticaNeueBlack': require('../assets/fonts/HelveticaNeueBlack.otf'),
+    'Montserrat-Regular': require('../assets/fonts/Montserrat-Regular.ttf'),
+    'Montserrat-Bold': require('../assets/fonts/Montserrat-Bold.ttf'),
+    'Montserrat-ExtraBold': require('../assets/fonts/Montserrat-ExtraBold.ttf'),
   });
 
   useEffect(() => {
@@ -20,5 +26,5 @@ export default function RootLayout() {
   if (!loadingFont) {
     return null;
   }
-  return <Stack screenOptions={{ headerShown: false }}/>;
+  return <Stack screenOptions={{ headerShown: false }}/>; // para mawala yung fucking header (crashed out dahil dito)
 }
