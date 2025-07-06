@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, Pressable } from 'react-native';
 
+
 export default function Login({ goTo }) {
   const [email, inputEmail] = useState('');
   const [password, inputPassword] = useState('');
+
+
   return (
     
 
@@ -57,6 +60,7 @@ const styles = StyleSheet.create({
   },
   logInSubHeading: {
     fontSize: 18,
+    fontFamily: 'Jost-Medium'
   },
   inputFields: {
     flex: 2.8,

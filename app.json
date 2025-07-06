@@ -2,7 +2,8 @@
   "expo": {
     "scheme": "acme",
     "plugins": [
-      "expo-router"
+      "expo-router",
+      "expo-font"
     ],
     "name": "react-native_test",
     "slug": "react-native_test"
