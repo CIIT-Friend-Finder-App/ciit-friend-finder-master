@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, Pressable, Button } from 'react-native';
+import {Picker} from '@react-native-picker/picker';
+import { Checkbox } from 'react-native-paper';
+
 
 
 export default function Register({ goTo }) {
@@ -7,6 +10,10 @@ export default function Register({ goTo }) {
     const [fullName, inputFullName] = useState('');
     const [nickname, inputNickname] = useState('');
     const [pronouns, inputPronouns] = useState('');
+    const [gender, inputGender] = useState();
+    const [password, inputPassword] = useState();
+    const [confirmPassword, inputConfirmPassword] = useState();
+    const [tnc, inputTnc] = useState(false);
     return (
         <View>
             { /* HEADER */}
@@ -44,20 +51,48 @@ export default function Register({ goTo }) {
                     value = {pronouns}
                     onChangeText={inputPronouns}
                 />
-                <Text>Preferred Name</Text>
-                <TextInput
-                    placeholder = "Name or nickname"
+                <Text>Gender</Text>
+                <Picker
                     //style = {}
-                    value = {nickname}
-                    onChangeText={inputNickname}
-                />
-                <Text>Preferred Name</Text>
+                    selectedValue={gender}
+                    onValueChange={(itemValue, itemIndex) =>
+                        inputGender(itemValue)
+                    }>
+                    <Picker.Item label="Female" value="female" />
+                    <Picker.Item label="Male" value="male" />
+                    <Picker.Item label="Nonbinary" value="nonbinary" />
+                    <Picker.Item label="Prefer not to say" value="none" />
+                </Picker>
+                <Text>Password</Text>
                 <TextInput
-                    placeholder = "Name or nickname"
+                    placeholder = "***"
                     //style = {}
-                    value = {nickname}
-                    onChangeText={inputNickname}
+                    value = {password}
+                    onChangeText={inputPassword}
+                    secureTextEntry
                 />
+                <Text>Confirm Password</Text>
+                <TextInput
+                    placeholder = "***"
+                    //style = {}
+                    value = {confirmPassword}
+                    onChangeText={inputConfirmPassword}
+                    secureTextEntry
+                />
+
+                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                    <Checkbox
+                        status={tnc ? 'checked' : 'unchecked'}
+                        onPress={() => {
+                        inputTnc(!tnc);
+                        }}
+                    />
+                    <Text>I agree to the <Text style ={{color: '#F83758', textDecorationLine: 'underline'}}>Terms & Conditions</Text> and the <Text style ={{color: '#F83758', textDecorationLine: 'underline'}}>Privacy Policy</Text>.</Text>
+                </View>
+
+
+
+
                 
 
             </View>
