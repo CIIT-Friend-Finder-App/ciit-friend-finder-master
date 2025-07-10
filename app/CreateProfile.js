@@ -17,95 +17,101 @@ export default function CreateProfile({ goTo }) {
                 <View style = {styles.header}>
                     <Text style = {styles.heading}>Profile Creation</Text>
                     <Text style = {styles.subheading}>Let other users get to know you!</Text>
-                    
-                    <View style = {styles.form}>
-                        <Text style = {styles.label}>Nickname</Text>
-                        <TextInput 
-                            placeholder = "Choose a name to hide your identity" 
-                            style = {styles.input} 
-                            value={nickname}
-                            onChangeText={inputNickname}>
-                        </TextInput>
-                        <Text style = {styles.label}>Birthday</Text>
+                </View>    
+                <View style = {styles.form}>
+                    <Text style = {styles.label}>Nickname</Text>
+                    <TextInput 
+                        placeholder = "Choose a name to hide your identity" 
+                        style = {styles.input} 
+                        value={nickname}
+                        onChangeText={inputNickname}>
+                    </TextInput>
+                    <Text style = {styles.label}>Birthday</Text>
 
-                        <View style = {styles.colcontainer}>
-                            <View style = {styles.column}>
-                                <Text style = {styles.label}>Course</Text>
-                                <View style = {styles.picker}>
-                                    <Picker
-                                        selectedValue = {course}
-                                        onValueChange = {(itemValue, itemIndex) =>
-                                        inputCourse(itemValue)
-                                    }>
-                                    <Picker.Item label = "BMMA - Animation" value="bmma-a" style = {styles.pickeritem} />
-                                    <Picker.Item label = "BMMA - Graphic Design" value="bmma-gd" style = {styles.pickeritem} />
-                                    <Picker.Item label = "BMMA - Video and Film Production" value="bmma-fvp" style = {styles.pickeritem} />
-                                    <Picker.Item label = "BS - Computer Science" value="bscs" style = {styles.pickeritem} />
-                                    <Picker.Item label = "BS - Entrepreneurship" value="bsentrep" style = {styles.pickeritem} />
-                                    <Picker.Item label = "BS - Entertainment and Multimedia Computing" value="bsemc" style = {styles.pickeritem} />
-                                    <Picker.Item label = "BS - Information Systems" value="bsis" style = {styles.pickeritem} />
-                                    </Picker>
-                                </View>
-                            </View>
-                            <View style = {styles.column}>
-                                <Text style = {styles.label}>Year</Text>
-                                <View style = {styles.picker}>
-                                    <Picker
-                                        selectedValue = {year}
-                                        onValueChange = {(itemValue, itemIndex) =>
-                                        inputYear(itemValue)
-                                    }>
-                                    <Picker.Item label = "First Year" value="firstyr" style = {styles.pickeritem} />
-                                    <Picker.Item label = "Second Year" value="secondyr" style = {styles.pickeritem} />
-                                    <Picker.Item label = "Third Year" value="thirdyr" style = {styles.pickeritem} />
-                                    <Picker.Item label = "Fourth Year" value="fourthyr" style = {styles.pickeritem} />
-                                    <Picker.Item label = "Irregular / Prefer not to say / Others" value="other" style = {styles.pickeritem} />
-                                    </Picker>
-                                </View>
+                    <View style = {styles.colcontainer}>
+                        <View style = {styles.column}>
+                            <Text style = {styles.label}>Course</Text>
+                            <View style = {styles.picker}>
+                                <Picker
+                                    selectedValue = {course}
+                                    onValueChange = {(itemValue, itemIndex) =>
+                                    inputCourse(itemValue)
+                                }>
+                                <Picker.Item label = "BMMA - Animation" value="bmma-a" style = {styles.pickeritem} />
+                                <Picker.Item label = "BMMA - Graphic Design" value="bmma-gd" style = {styles.pickeritem} />
+                                <Picker.Item label = "BMMA - Video and Film Production" value="bmma-fvp" style = {styles.pickeritem} />
+                                <Picker.Item label = "BS - Computer Science" value="bscs" style = {styles.pickeritem} />
+                                <Picker.Item label = "BS - Entrepreneurship" value="bsentrep" style = {styles.pickeritem} />
+                                <Picker.Item label = "BS - Entertainment and Multimedia Computing" value="bsemc" style = {styles.pickeritem} />
+                                <Picker.Item label = "BS - Information Systems" value="bsis" style = {styles.pickeritem} />
+                                </Picker>
                             </View>
                         </View>
-
-
-                        <Text style = {styles.label}>Bio (Optional)</Text>
-                        <TextInput
-                            placeholder= "Anything else you want people to know about you?"
-                            style = {styles.input} 
-                            multiline = {true}
-                            value = {bio}
-                            onChangeText= {inputBio}>
-                        </TextInput>
-                        <Text style = {styles.label}>Interests</Text>
-                        <TextInput
-                            placeholder= "Let others know what you're interested in!"
-                            style = {styles.input} 
-                            multiline = {true}
-                            value = {interests}
-                            onChangeText= {inputInterests}>
-                        </TextInput>
-                        <Text style = {styles.label}>Hobbies</Text>
-                        <TextInput
-                            placeholder= "Tell people about what you like to do in your free time!"
-                            style = {styles.input} 
-                            multiline = {true}
-                            value = {hobbies}
-                            onChangeText= {inputHobbies}>
-                        </TextInput>
-                        <Text style = {styles.label}>Looking For:</Text>
-                        <View style = {styles.picker}>
-                            <Picker
-                                selectedValue = {finding}
-                                onValueChange = {(itemValue, itemIndex) =>
-                                inputFinding(itemValue)
-                            }>
-                            <Picker.Item label = "A study buddy!" value="studybuddy" style = {styles.pickeritem} />
-                            <Picker.Item label = "A roommate!" value="roommate" style = {styles.pickeritem} />
-                            <Picker.Item label = "A food trip friend!" value="foodtripfriend" style = {styles.pickeritem} />
-                            <Picker.Item label = "A gaming friend!" value="gamingfriend" style = {styles.pickeritem} />
-                            <Picker.Item label = "All of the above! / Multiple" value="all" style = {styles.pickeritem} />
-                            </Picker>
+                        <View style = {styles.column}>
+                            <Text style = {styles.label}>Year</Text>
+                            <View style = {styles.picker}>
+                                <Picker
+                                    selectedValue = {year}
+                                    onValueChange = {(itemValue, itemIndex) =>
+                                    inputYear(itemValue)
+                                }>
+                                <Picker.Item label = "First Year" value="firstyr" style = {styles.pickeritem} />
+                                <Picker.Item label = "Second Year" value="secondyr" style = {styles.pickeritem} />
+                                <Picker.Item label = "Third Year" value="thirdyr" style = {styles.pickeritem} />
+                                <Picker.Item label = "Fourth Year" value="fourthyr" style = {styles.pickeritem} />
+                                <Picker.Item label = "Irregular / Prefer not to say / Others" value="other" style = {styles.pickeritem} />
+                                </Picker>
+                            </View>
                         </View>
+                    </View>
 
-                        <Text style = {styles.label}>Card Background</Text>
+
+                    <Text style = {styles.label}>Bio (Optional)</Text>
+                    <TextInput
+                        placeholder= "Anything else you want people to know about you?"
+                        style = {styles.input} 
+                        multiline = {true}
+                        value = {bio}
+                        onChangeText= {inputBio}>
+                    </TextInput>
+                    <Text style = {styles.label}>Interests</Text>
+                    <TextInput
+                        placeholder= "Let others know what you're interested in!"
+                        style = {styles.input} 
+                        multiline = {true}
+                        value = {interests}
+                        onChangeText= {inputInterests}>
+                    </TextInput>
+                    <Text style = {styles.label}>Hobbies</Text>
+                    <TextInput
+                        placeholder= "Tell people about what you like to do in your free time!"
+                        style = {styles.input} 
+                        multiline = {true}
+                        value = {hobbies}
+                        onChangeText= {inputHobbies}>
+                    </TextInput>
+                    <Text style = {styles.label}>Looking For:</Text>
+                    <View style = {styles.picker}>
+                        <Picker
+                            selectedValue = {finding}
+                            onValueChange = {(itemValue, itemIndex) =>
+                            inputFinding(itemValue)
+                        }>
+                        <Picker.Item label = "A study buddy!" value="studybuddy" style = {styles.pickeritem} />
+                        <Picker.Item label = "A roommate!" value="roommate" style = {styles.pickeritem} />
+                        <Picker.Item label = "A food trip friend!" value="foodtripfriend" style = {styles.pickeritem} />
+                        <Picker.Item label = "A gaming friend!" value="gamingfriend" style = {styles.pickeritem} />
+                        <Picker.Item label = "All of the above! / Multiple" value="all" style = {styles.pickeritem} />
+                        </Picker>
+                    </View>
+                    <Text style = {styles.label}>Card Background</Text>
+                </View>
+                <View style = {styles.colcontainer}>
+                    <View style = {styles.column}>
+                        <Pressable style = {styles.button} onPress={() => goTo('login')} ><Text style = {styles.buttontext}>Back</Text></Pressable>
+                    </View>
+                    <View style = {styles.column}>
+                        <Pressable style = {styles.button} onPress={() => goTo('login')} ><Text style = {styles.buttontext}>Finish Profile</Text></Pressable>
                     </View>
                 </View>
             </ScrollView>
@@ -206,5 +212,20 @@ const styles = StyleSheet.create({
     },
     column: {
         flex: 1,
+    },
+
+    button: {
+        width: '90%',
+        backgroundColor: '#F82E4B',
+        marginTop: 20,
+        borderRadius: 30,
+        padding: 10,
+        alignItems: 'center',
+        alignSelf: 'center'
+    },
+    buttontext: {
+        color: 'white',
+        fontFamily: 'HelveticaNeueRoman',
+        fontSize: 13
     },
 });
