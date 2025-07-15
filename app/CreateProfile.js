@@ -13,7 +13,7 @@ export default function CreateProfile({ goTo }) {
 
     return (
         <View style = {styles.container}>
-            <ScrollView style = {styles.scrollable}>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <View style = {styles.header}>
                     <Text style = {styles.heading}>Profile Creation</Text>
                     <Text style = {styles.subheading}>Let other users get to know you!</Text>
@@ -104,7 +104,7 @@ export default function CreateProfile({ goTo }) {
                         <Picker.Item label = "All of the above! / Multiple" value="all" style = {styles.pickeritem} />
                         </Picker>
                     </View>
-                    <Text style = {styles.label}>Card Background</Text>
+                    <Text style = {styles.label}>Card Design</Text>
                 </View>
                 <View style = {styles.colcontainer}>
                     <View style = {styles.column}>
@@ -126,10 +126,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 20,
         backgroundColor: 'white',
-    },
-
-    scrollable: {
-       
     },
 
     /*for header*/
