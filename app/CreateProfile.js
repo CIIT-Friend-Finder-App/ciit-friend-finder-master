@@ -1,5 +1,5 @@
 import { View, ScrollView, Text, StyleSheet, Pressable, TextInput } from 'react-native';
-import {Picker} from '@react-native-picker/picker';
+import { Picker } from '@react-native-picker/picker';
 import { useState } from 'react';
 
 export default function CreateProfile({ goTo }) {
@@ -111,7 +111,7 @@ export default function CreateProfile({ goTo }) {
                         <Pressable style = {styles.button} onPress={() => goTo('login')} ><Text style = {styles.buttontext}>Back</Text></Pressable>
                     </View>
                     <View style = {styles.column}>
-                        <Pressable style = {styles.button} onPress={() => goTo('login')} ><Text style = {styles.buttontext}>Finish Profile</Text></Pressable>
+                        <Pressable style = {styles.button} onPress={() => goTo('profilepreview')} ><Text style = {styles.buttontext}>Finish Profile</Text></Pressable>
                     </View>
                 </View>
             </ScrollView>
