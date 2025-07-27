@@ -154,6 +154,7 @@ const styles = StyleSheet.create({
     },
     fieldTitle: {
         fontFamily: 'HelveticaNeueRoman',
+        marginTop: 2,
         marginBottom: 5
     },
     signupFormContainer: {
@@ -182,7 +183,8 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         height: 40,
         overflow: 'hidden',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginBottom: 4,
 
     },
     picker: {
@@ -199,11 +201,8 @@ const styles = StyleSheet.create({
         fontFamily: 'HelveticaNeueRoman',
         color: 'grey',
         fontSize: 10, 
-  
         marginBottom: 10,
         paddingLeft: 18,
-
-
         height: 40
         
     },

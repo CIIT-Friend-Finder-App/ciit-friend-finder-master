@@ -1,6 +1,7 @@
-import { View, ScrollView, Text, StyleSheet, Pressable, TextInput } from 'react-native';
+import { View, ScrollView, Text, StyleSheet, Pressable, TextInput, Platform } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { useState } from 'react';
+import DateTimePicker from "@react-native-community/datetimepicker"; 
 
 export default function CreateProfile({ goTo }) {
     const [nickname, inputNickname] = useState('');
@@ -10,6 +11,24 @@ export default function CreateProfile({ goTo }) {
     const [hobbies, inputHobbies] = useState('');
     const [finding, inputFinding] = useState('');
     const [bio, inputBio] = useState('');
+    const [date, setDate] = useState(new Date());
+    const [showPicker, setShowPicker] = useState(false);
+
+    const toggleDatepicker = () => {
+        setShowPicker(!showPicker);
+    };
+
+    const onChange = ({ type }, selectedDate) => {
+        if (type == "set") {
+            const currentDate = selectedDate || date;
+            toggleDatepicker();
+            setDate(currentDate);
+
+
+        } else {
+            toggleDatepicker();
+        }
+    };
 
     return (
         <View style = {styles.container}>
@@ -27,6 +46,26 @@ export default function CreateProfile({ goTo }) {
                         onChangeText={inputNickname}>
                     </TextInput>
                     <Text style = {styles.label}>Birthday</Text>
+                    {showPicker && (
+                        <DateTimePicker 
+                        mode="date" 
+                        display="spinner" 
+                        value={date}
+                        onChange={onChange}/>
+                    )}
+
+                    {!showPicker && (
+                        <Pressable onPress={toggleDatepicker}>
+                            <TextInput 
+                                placeholder="Sat January 01 2000"
+                                style = {styles.input}
+                                value={date.toDateString()}
+                                onChangeText={setDate}
+                                placeholderTextColor={'grey'}
+                                editable={false}>
+                            </TextInput>
+                        </Pressable>
+                    )}
 
                     <View style = {styles.colcontainer}>
                         <View style = {styles.column}>
@@ -170,7 +209,7 @@ const styles = StyleSheet.create({
     },
 
     label: {
-        fontFamily: 'HelveticaNeueHeavy',
+        fontFamily: 'HelveticaNeueRoman',
         fontSize: 14,
         paddingLeft: 5,
         paddingTop: 2,
