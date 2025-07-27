@@ -13,6 +13,7 @@ export default function CreateProfile({ goTo }) {
     const [bio, inputBio] = useState('');
     const [date, setDate] = useState(new Date());
     const [showPicker, setShowPicker] = useState(false);
+    const maxDate = new Date(2010, 11, 31);
 
     const toggleDatepicker = () => {
         setShowPicker(!showPicker);
@@ -48,6 +49,7 @@ export default function CreateProfile({ goTo }) {
                     <Text style = {styles.label}>Birthday</Text>
                     {showPicker && (
                         <DateTimePicker 
+                        maximumDate={maxDate}
                         mode="date" 
                         display="spinner" 
                         value={date}
