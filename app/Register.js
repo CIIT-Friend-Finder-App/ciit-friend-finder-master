@@ -116,7 +116,7 @@ export default function Register({ goTo }) {
 
             <View style = {styles.footer}>
                 
-                    <Pressable style = {styles.signupBtn} onPress={() => goTo('swipe')} ><Text style = {styles.txtSignupBtn}>Submit</Text></Pressable>
+                    <Pressable style = {styles.signupBtn} onPress={() => goTo('createprofile')} ><Text style = {styles.txtSignupBtn}>Submit</Text></Pressable>
             </View>
             
         </View>

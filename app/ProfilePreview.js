@@ -53,7 +53,7 @@ export default function ProfilePreview({ goTo }) {
                         <Pressable style = {styles.button} onPress={() => goTo('createprofile')} ><Text style = {styles.buttontext}>Edit</Text></Pressable>
                     </View>
                     <View style = {styles.column}>
-                        <Pressable style = {styles.button} onPress={() => goTo('profilepreview')} ><Text style = {styles.buttontext}>Finish Profile</Text></Pressable>
+                        <Pressable style = {styles.button} onPress={() => goTo('landing')} ><Text style = {styles.buttontext}>Finish Profile</Text></Pressable>
                     </View>
                 </View>
             </ScrollView>
