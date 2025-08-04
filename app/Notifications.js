@@ -7,60 +7,47 @@ import { useRef, useState, useEffect } from 'react';
 
 export default function Notifications({ goTo }) {
   const initialCards = [
-    { 
-    id: 1, 
-    nickname: 'Day', 
-    age: 21, 
-    bio: 'erm erm erm erm erm erm erm', about: ['She/Her', 'Second Year', 'BMMA - Graphic Design'], 
-    interests: 'Infinity Nikki, Valo, Gamble sa Gacha games', 
-    hobbies: 'kms', 
-    lookingFor: 'Study buddy' 
-    },
-    { 
-    id: 2, 
-    nickname: 'Yohan', 
-    age: 18, 
-    bio: 'spending habits', about: ['They/Them', 'Second Year', 'BMMA - Graphic Design'], 
-    interests: 'spend, spend on food, spend on merch, say yes to spending', 
-    hobbies: 'spend', 
-    lookingFor: 'food buddy, shopping buddy' 
-    },
-    { 
-    id: 3, 
-    nickname: 'Lili', 
-    age: 20, 
-    bio: 'i cant do this anymore please end this misery', about: ['She/Her', 'Second Year', 'BMMA - Graphic Design'], 
-    interests: 'cats, dogs, cheat on my dogs with stray cats and dogs, gamble on gacha, spend all my net worth on food', 
-    hobbies: 'valo, genshin, watch random stuff, fangirl blackpink', 
-    lookingFor: 'Study buddy' 
-    },
-    { 
-    id: 4, 
-    nickname: 'Gem', 
-    age: 23, 
-    bio: 'i sound drunk all the time but i swear im sober', about: ['He/Him', 'Second Year', 'BMMA - Graphic Design'], 
-    interests: 'dana', 
-    hobbies: 'dana', 
-    lookingFor: 'dana' 
-    },
-    {
-    id: 5, 
-    nickname: 'Tyrieffy', 
-    age: 23, 
-    bio: 'hahaHAHSHAHAHHAHAHAH burn everything', about: ['She/Her', 'Second Year', 'BMMA - Graphic Design'], 
-    interests: 'goon over gacha characters and gamblle for them', 
-    hobbies: 'goon, workout, crashout and make things harder for me (software engr), goon', 
-    lookingFor: 'Study buddyddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd' 
-    },
-    {
-    id: 6, 
-    nickname: 'moimoi', 
-    age: 22, 
-    bio: 'play aroun valo enemies as if im playing with cockroach lives', about: ['She/Her', 'Second Year', 'BMMA - Graphic Design'], 
-    interests: 'valo, hotdog sinigang', 
-    hobbies: 'valo', 
-    lookingFor: 'Study buddy' 
-    },
+
+        { 
+            id: 1, 
+            nickname: 'Yohan', 
+            age: 18, 
+            bio: 'I like to spend on food, merch, and anything that makes me happy', 
+            about: ['They/Them', 'Second Year', 'BMMA - Graphic Design'], 
+            interests: 'Merch, Anime', 
+            hobbies: 'I like spending my money', 
+            lookingFor: 'Foodtrip Friend' 
+        },
+        { 
+            id: 2, 
+            nickname: 'Lili', 
+            age: 20, 
+            bio: 'I love animals and I have a lot of pets, I also like to play games', 
+            about: ['She/Her', 'Second Year', 'BMMA - Graphic Design'], 
+            interests: 'Cats, Dogs, Video Games', 
+            hobbies: 'Watch YT videos, play games, play with my pets', 
+            lookingFor: 'Gaming Buddy' 
+        },
+        { 
+            id: 3, 
+            nickname: 'Gem', 
+            age: 23, 
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do', 
+            about: ['He/Him', 'Second Year', 'BMMA - Graphic Design'], 
+            interests: 'Dana, Dana, Dana', 
+            hobbies: 'Lorem ipsum dolor sit amet, consectetur', 
+            lookingFor: 'Study Buddy' 
+        },
+        {
+            id: 4, 
+            nickname: 'Tyrieffy', 
+            age: 23, 
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do', 
+            about: ['She/Her', 'Second Year', 'BMMA - Graphic Design'], 
+            interests: 'Lorem ipsum dolor sit', 
+            hobbies: 'Lorem ipsum dolor sit amet, consectetur', 
+            lookingFor: 'Study Buddy' 
+        },
   ];
 
   const [cards, setCards] = useState(initialCards);
@@ -226,7 +213,7 @@ export default function Notifications({ goTo }) {
           <Text style={{ fontSize: 12, color: 'gray', display: 'none' }}>isSwiping: {isSwiping.current ? 'true' : 'false'}</Text>
         </View>
 
-        <View style={{ minHeight: 500, alignItems: 'center', position: 'relative', marginBottom: 50 }}>
+        <View style={{ minHeight: 500, alignItems: 'center', position: 'relative', marginBottom: 20 }}>
           {cards.length > 0 ? (
             cards.map((card, index) => renderCard(card, index))
           ) : (

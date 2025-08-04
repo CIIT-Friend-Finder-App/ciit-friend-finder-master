@@ -9,16 +9,6 @@ export default function Landing({ goTo }) {
     const initialCards = [
         { 
             id: 1, 
-            nickname: 'Day', 
-            age: 21, 
-            bio: 'I love programming and I want to become a software engineer someday', 
-            about: ['She/Her', 'Second Year', 'BMMA - Graphic Design'], 
-            interests: 'Infinity Nikki, VALORANT', 
-            hobbies: 'Watch series, play games, read books', 
-            lookingFor: 'Study Buddy' 
-        },
-        { 
-            id: 2, 
             nickname: 'Yohan', 
             age: 18, 
             bio: 'I like to spend on food, merch, and anything that makes me happy', 
@@ -28,7 +18,7 @@ export default function Landing({ goTo }) {
             lookingFor: 'Foodtrip Friend' 
         },
         { 
-            id: 3, 
+            id: 2, 
             nickname: 'Lili', 
             age: 20, 
             bio: 'I love animals and I have a lot of pets, I also like to play games', 
@@ -38,7 +28,7 @@ export default function Landing({ goTo }) {
             lookingFor: 'Gaming Buddy' 
         },
         { 
-            id: 4, 
+            id: 3, 
             nickname: 'Gem', 
             age: 23, 
             bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do', 
@@ -48,7 +38,7 @@ export default function Landing({ goTo }) {
             lookingFor: 'Study Buddy' 
         },
         {
-            id: 5, 
+            id: 4, 
             nickname: 'Tyrieffy', 
             age: 23, 
             bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do', 
@@ -402,7 +392,7 @@ export default function Landing({ goTo }) {
             </View>
      
             <ScrollView style={styles.body} showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 100 }}>
-                <View style={{ marginTop: 20,minHeight: 500, alignItems: 'center', position: 'relative', marginBottom: 50 }}>
+                <View style={{ marginTop: 20,minHeight: 500, alignItems: 'center', position: 'relative', marginBottom: 20 }}>
                     {cards.length > 0 ? (
                         cards.map((card, index) => renderCard(card, index))
                     ) : (
@@ -600,10 +590,12 @@ const styles = StyleSheet.create({
     },
     overlay: {
         position: 'absolute',
-        top: 20,
         padding: 10,
-        borderWidth: 2,
+        width: '100%',
+        height: '100%',
         borderRadius: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     likeOverlay: {
         left: 20,
@@ -627,6 +619,14 @@ const styles = StyleSheet.create({
         alignItems: 'left',
         padding: 30,
         gap: 10,
+        shadowColor: 'gray',
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.17,
+        shadowRadius: 2.54,
+        elevation: 3,
     },
     filterHeading: {
         fontFamily: 'HelveticaNeueHeavy',

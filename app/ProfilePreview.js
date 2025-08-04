@@ -13,7 +13,7 @@ export default function ProfilePreview({ goTo }) {
                         <Text style = {styles.nickname}>Nickname, <Text style = {styles.age}>19</Text></Text>
                         <View style = {styles.bioContain}>
                             <Text style = {styles.bio}>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                I love programming and I want to become a software engineer someday
                             </Text>
                         </View>
                         <Text style = {styles.labels}>About Me</Text>
@@ -31,13 +31,13 @@ export default function ProfilePreview({ goTo }) {
                         <View style = {styles.bioContain}>
                             <Text style = {styles.labels}>Interests</Text>
                             <Text style = {styles.bio2}>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                Infinity Nikki, VALORANT
                             </Text>
                         </View>
                         <View style = {styles.bioContain}>
                             <Text style = {styles.labels}>Hobbies</Text>
                             <Text style = {styles.bio2}>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                Watch series, play games, read books
                             </Text>
                         </View>
                         <View style = {styles.bioContain}>
