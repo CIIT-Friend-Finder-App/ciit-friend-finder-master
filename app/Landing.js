@@ -11,62 +11,53 @@ export default function Landing({ goTo }) {
             id: 1, 
             nickname: 'Day', 
             age: 21, 
-            bio: 'erm erm erm erm erm erm erm', 
+            bio: 'I love programming and I want to become a software engineer someday', 
             about: ['She/Her', 'Second Year', 'BMMA - Graphic Design'], 
-            interests: 'Infinity Nikki, Valo, Gamble sa Gacha games', 
-            hobbies: 'kms', 
-            lookingFor: 'Study buddy' 
+            interests: 'Infinity Nikki, VALORANT', 
+            hobbies: 'Watch series, play games, read books', 
+            lookingFor: 'Study Buddy' 
         },
         { 
             id: 2, 
             nickname: 'Yohan', 
             age: 18, 
-            bio: 'spending habits', 
+            bio: 'I like to spend on food, merch, and anything that makes me happy', 
             about: ['They/Them', 'Second Year', 'BMMA - Graphic Design'], 
-            interests: 'spend, spend on food, spend on merch, say yes to spending', 
-            hobbies: 'spend', 
-            lookingFor: 'food buddy, shopping buddy' 
+            interests: 'Merch, Anime', 
+            hobbies: 'I like spending my money', 
+            lookingFor: 'Foodtrip Friend' 
         },
         { 
             id: 3, 
             nickname: 'Lili', 
             age: 20, 
-            bio: 'i cant do this anymore please end this misery', 
+            bio: 'I love animals and I have a lot of pets, I also like to play games', 
             about: ['She/Her', 'Second Year', 'BMMA - Graphic Design'], 
-            interests: 'cats, dogs, cheat on my dogs with stray cats and dogs, gamble on gacha, spend all my net worth on food', 
-            hobbies: 'valo, genshin, watch random stuff, fangirl blackpink', 
-            lookingFor: 'Study buddy' 
+            interests: 'Cats, Dogs, Video Games', 
+            hobbies: 'Watch YT videos, play games, play with my pets', 
+            lookingFor: 'Gaming Buddy' 
         },
         { 
             id: 4, 
             nickname: 'Gem', 
             age: 23, 
-            bio: 'i sound drunk all the time but i swear im sober', 
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do', 
             about: ['He/Him', 'Second Year', 'BMMA - Graphic Design'], 
-            interests: 'dana', 
-            hobbies: 'dana', 
-            lookingFor: 'dana' 
+            interests: 'Dana, Dana, Dana', 
+            hobbies: 'Lorem ipsum dolor sit amet, consectetur', 
+            lookingFor: 'Study Buddy' 
         },
         {
             id: 5, 
             nickname: 'Tyrieffy', 
             age: 23, 
-            bio: 'hahaHAHSHAHAHHAHAHAH burn everything', 
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do', 
             about: ['She/Her', 'Second Year', 'BMMA - Graphic Design'], 
-            interests: 'goon over gacha characters and gamblle for them', 
-            hobbies: 'goon, workout, crashout and make things harder for me (software engr), goon', 
-            lookingFor: 'Study buddyddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd' 
+            interests: 'Lorem ipsum dolor sit', 
+            hobbies: 'Lorem ipsum dolor sit amet, consectetur', 
+            lookingFor: 'Study Buddy' 
         },
-        {
-            id: 6, 
-            nickname: 'moimoi', 
-            age: 22, 
-            bio: 'play aroun valo enemies as if im playing with cockroach lives', 
-            about: ['She/Her', 'Second Year', 'BMMA - Graphic Design'], 
-            interests: 'valo, hotdog sinigang', 
-            hobbies: 'valo', 
-            lookingFor: 'Study buddy' 
-        },
+
     ];
 
     const [cards, setCards] = useState(initialCards);
