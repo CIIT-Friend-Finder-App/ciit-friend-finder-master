@@ -50,7 +50,7 @@ export default function Notifications({ goTo }) {
     bio: 'hahaHAHSHAHAHHAHAHAH burn everything', about: ['She/Her', 'Second Year', 'BMMA - Graphic Design'], 
     interests: 'goon over gacha characters and gamblle for them', 
     hobbies: 'goon, workout, crashout and make things harder for me (software engr), goon', 
-    lookingFor: 'Study buddy' 
+    lookingFor: 'Study buddyddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd' 
     },
     {
     id: 6, 
@@ -88,48 +88,48 @@ export default function Notifications({ goTo }) {
 
   const panResponder = useRef(
     PanResponder.create({
-      onStartShouldSetPanResponder: () => !isSwiping.current,
+      onStartShouldSetPanResponder: () => !isSwiping.current, /* when !isSwiping.current is !false = true, then onStartShouldSetPanResponder allows swiping. otherwise, swiping is blocked. onSTartShouldSetPanResponder when triggered, is only a decision whether to allow swiping or not*/
       onPanResponderGrant: () => {
-        isSwiping.current = true;
+        isSwiping.current = true;  /* lock isSwiping to true while onPanResponderGrant is activated. so that walang double swipes. */
       },
-      onPanResponderMove: Animated.event(
+      onPanResponderMove: Animated.event( /* every time user moves their finger, update the card's pan.x and pan.y values, so that the animation will follow through */
         [null, { dx: pan.x, dy: pan.y }],
-        { useNativeDriver: false }
+        { useNativeDriver: false } /*set to false since Native Driver only works for transform and opacity*/
       ),
-      onPanResponderRelease: (_, gestureState) => {
+      onPanResponderRelease: (_, gestureState) => { /* function receives gestureState to tell how far user swiped  */
         if (gestureState.dx > 100) {
-          swipeRight();
+          swipeRight(); /* if gestureState x swipe is more than 100 pixels to the right, it is a swipe right or like */
         } else if (gestureState.dx < -100) {
-          swipeLeft();
-        } else {
-          Animated.spring(pan, {
-            toValue: { x: 0, y: 0 },
-            useNativeDriver: true,
+          swipeLeft(); /* same lang */
+        } else { /* if swipe was too small (does not reach 100 or -100 pixels) */
+          Animated.spring(pan, { 
+            toValue: { x: 0, y: 0 }, /* animate card back to ceter */
+            useNativeDriver: true, /* for smoother animation, para hindi nakabase animation sa JS thread which is slow and skips frames */
           }).start(() => {
-            isSwiping.current = false;
+            isSwiping.current = false; /* after animation ends, reset isSwiping to false */
           });
         }
       },
       onPanResponderTerminate: () => {
-        isSwiping.current = false;
+        isSwiping.current = false; /* resets swiping state if ever user is in the middle of swiping but gets interrupted,, eg phone call */
       },
     })
   ).current;
 
   const swipeRight = () => {
-    Animated.parallel([
-      Animated.timing(pan, {
+    Animated.parallel([ /* to run all these animations at the same time */
+      Animated.timing(pan, { /* to move to the right */
         toValue: { x: 500, y: 0 },
         duration: 300,
         useNativeDriver: true,
       }),
-      Animated.timing(opacity, {
+      Animated.timing(opacity, { /* fade effect */
         toValue: 0,
         duration: 300,
         useNativeDriver: true,
       }),
     ]).start(() => {
-      removeTopCard();
+      removeTopCard(); /* after animation finishes, does this function. remove the card from the deck */
     });
   };
 
@@ -151,21 +151,21 @@ export default function Notifications({ goTo }) {
   };
 
   const removeTopCard = () => {
-    setCards(prev => prev.slice(1));
+    setCards(prev => prev.slice(1)); /* removeTopCard function. to remove first card in card list array. this updates the state using setCards */
   };
 
   const renderCard = (card, index) => {
-    const isTopCard = index === 0;
+    const isTopCard = index === 0; // to check if its top card
 
-    const animatedStyle = isTopCard
-      ? { transform: [{ translateX: pan.x }, { translateY: pan.y }], opacity }
-      : { transform: [{ translateY: index * -5 }] };
+    const animatedStyle = isTopCard // animation style
+      ? { transform: [{ translateX: pan.x }, { translateY: pan.y }], opacity } // if top card, swipe movement and fade effect
+      : { transform: [{ translateY: index * -5 }] }; // if not top card, desk stack appearance
 
     return (
       <Animated.View
-        key={card.id}
-        style={[styles.card, animatedStyle, { zIndex: cards.length - index }]}
-        {...(isTopCard ? panResponder.panHandlers : {})}
+        key={card.id} 
+        style={[styles.card, animatedStyle, { zIndex: cards.length - index }]}  // card styles, yung animation styles, as well as z index to ensure top card is always on top VISUALLY
+        {...(isTopCard ? panResponder.panHandlers : {})} // only top card gets panresponder and panhandlers so its the only one that can be dragged
       >
         <Text style={styles.nickname}>
           {card.nickname}, <Text style={styles.age}>{card.age}</Text>
@@ -199,7 +199,7 @@ export default function Notifications({ goTo }) {
           <Text style={styles.bio2}>{card.lookingFor}</Text>
         </View>
 
-        {isTopCard && (
+        {isTopCard && ( // for the visual feedbacks when swiping.. yung like and x na nagaappear
           <>
             <Animated.View style={[styles.overlay, styles.likeOverlay, { opacity: likeOpacity }]}>
               <Text style={styles.overlayText}><AntDesign name="check" size={24} color="green" /></Text>
@@ -226,7 +226,7 @@ export default function Notifications({ goTo }) {
           <Text style={{ fontSize: 12, color: 'gray', display: 'none' }}>isSwiping: {isSwiping.current ? 'true' : 'false'}</Text>
         </View>
 
-        <View style={{ height: 500, alignItems: 'center', position: 'relative' }}>
+        <View style={{ minHeight: 500, alignItems: 'center', position: 'relative', marginBottom: 70 }}>
           {cards.length > 0 ? (
             cards.map((card, index) => renderCard(card, index))
           ) : (
@@ -235,7 +235,8 @@ export default function Notifications({ goTo }) {
             </Text>
           )}
         </View>
-
+        
+        {cards.length > 0 && (
         <View style={styles.common}>
           <Text style={styles.commonHeading}>Things we can bond over:</Text>
           <View style={styles.listCommon}>
@@ -243,6 +244,7 @@ export default function Notifications({ goTo }) {
             <View style={styles.itemCommon}><Text>Course</Text></View>
           </View>
         </View>
+        )}
       </ScrollView>
 
       <View style={styles.navbar}>
@@ -269,7 +271,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f3f3f3',
     padding: 20,
-    alignItems: 'center',
+
   },
   header: {
     height: 150,
@@ -388,6 +390,7 @@ const styles = StyleSheet.create({
     shadowRadius: 2.54,
     elevation: 3,
     gap: 5,
+
   },
   commonHeading: {
     fontFamily: 'HelveticaNeueHeavy',
