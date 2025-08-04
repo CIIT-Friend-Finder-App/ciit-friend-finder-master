@@ -11,10 +11,8 @@ export default function RootLayout() {
 
     'HelveticaNeueRoman': require('../assets/fonts/HelveticaNeueRoman.otf'),
     'HelveticaNeueHeavy': require('../assets/fonts/HelveticaNeueHeavy.otf'),
-    'HelveticaNeueBlack': require('../assets/fonts/HelveticaNeueBlack.otf'),
-    'Montserrat-Regular': require('../assets/fonts/Montserrat-Regular.ttf'),
-    'Montserrat-Bold': require('../assets/fonts/Montserrat-Bold.ttf'),
-    'Montserrat-ExtraBold': require('../assets/fonts/Montserrat-ExtraBold.ttf'),
+    
+    
   });
 
   useEffect(() => {

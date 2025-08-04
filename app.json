@@ -1,11 +1,17 @@
 {
   "expo": {
+    "splash": {
+      "image": "./assets/images/logocfflast.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+      
+    }, 
     "scheme": "acme",
     "plugins": [
       "expo-router",
       "expo-font"
     ],
-    "name": "react-native_test",
+    "name": "FriendFinder",
     "slug": "react-native_test"
   }
 }

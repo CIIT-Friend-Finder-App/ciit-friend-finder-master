@@ -226,7 +226,7 @@ export default function Notifications({ goTo }) {
           <Text style={{ fontSize: 12, color: 'gray', display: 'none' }}>isSwiping: {isSwiping.current ? 'true' : 'false'}</Text>
         </View>
 
-        <View style={{ minHeight: 500, alignItems: 'center', position: 'relative', marginBottom: 70 }}>
+        <View style={{ minHeight: 500, alignItems: 'center', position: 'relative', marginBottom: 50 }}>
           {cards.length > 0 ? (
             cards.map((card, index) => renderCard(card, index))
           ) : (
