@@ -411,7 +411,7 @@ export default function Landing({ goTo }) {
             </View>
      
             <ScrollView style={styles.body} showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 100 }}>
-                <View style={{ marginTop: 20,minHeight: 500, alignItems: 'center', position: 'relative', marginBottom: 70 }}>
+                <View style={{ marginTop: 20,minHeight: 500, alignItems: 'center', position: 'relative', marginBottom: 50 }}>
                     {cards.length > 0 ? (
                         cards.map((card, index) => renderCard(card, index))
                     ) : (
