@@ -23,7 +23,7 @@ export default function Account({ goTo }) {
             </View>
             <View style = {styles.settings}>
                 <Text style = {{fontFamily: 'HelveticaNeueHeavy', fontSize: 18, paddingBottom: 25}}>Settings</Text>
-                <Pressable style = {{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Pressable onPress={() => goTo('profilepreview')} style = {{flexDirection: 'row', justifyContent: 'space-between'}}>
                     <Text style = {styles.settingsLabel}>Profile Preview</Text>
                     <AntDesign name="right" size={15} color="black" margin={4}/>
                 </Pressable>
@@ -33,7 +33,7 @@ export default function Account({ goTo }) {
                     <AntDesign name="right" size={15} color="black" margin={4}/>
                 </Pressable>
                 <View style={styles.line}></View>
-                <Pressable style = {{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Pressable onPress={() => goTo('login')} style = {{flexDirection: 'row', justifyContent: 'space-between'}}>
                     <Text style = {styles.settingsLabel}>Log Out</Text>
                     <MaterialIcons name="logout" size={15} color="black" margin={4} />
                 </Pressable>
@@ -58,7 +58,7 @@ export default function Account({ goTo }) {
             </View>
             <View style = {styles.navbar}>
                 <Pressable onPress={() => goTo('landing')} ><MaterialCommunityIcons name="cards" size={35} color="#FCA5B4" /></Pressable>
-                <FontAwesome name="wechat" size={30} color="#FCA5B4"/>
+                <Pressable onPress={() => goTo('messages')}><FontAwesome name="wechat" size={30} color="#FCA5B4" /></Pressable>
                 <Pressable onPress={() => goTo('notifications')} ><Ionicons name="notifications" size={30} color="#FCA5B4" /></Pressable>
                 <View style = {styles.selectedNav}>
                     <Pressable onPress = {() => goTo('account')}><MaterialCommunityIcons name="account" size={30} color="white" /></Pressable>

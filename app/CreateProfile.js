@@ -2,6 +2,7 @@ import { View, ScrollView, Text, StyleSheet, Pressable, TextInput, Platform } fr
 import { Picker } from '@react-native-picker/picker';
 import { useState } from 'react';
 import DateTimePicker from "@react-native-community/datetimepicker"; 
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 export default function CreateProfile({ goTo }) {
     const [nickname, inputNickname] = useState('');
@@ -69,43 +70,36 @@ export default function CreateProfile({ goTo }) {
                         </Pressable>
                     )}
 
-                    <View style = {styles.colcontainer}>
-                        <View style = {styles.column}>
-                            <Text style = {styles.label}>Course</Text>
-                            <View style = {styles.picker}>
-                                <Picker
-                                    selectedValue = {course}
-                                    onValueChange = {(itemValue, itemIndex) =>
-                                    inputCourse(itemValue)
-                                }>
-                                <Picker.Item label = "BMMA - Animation" value="bmma-a" style = {styles.pickeritem} />
-                                <Picker.Item label = "BMMA - Graphic Design" value="bmma-gd" style = {styles.pickeritem} />
-                                <Picker.Item label = "BMMA - Video and Film Production" value="bmma-fvp" style = {styles.pickeritem} />
-                                <Picker.Item label = "BS - Computer Science" value="bscs" style = {styles.pickeritem} />
-                                <Picker.Item label = "BS - Entrepreneurship" value="bsentrep" style = {styles.pickeritem} />
-                                <Picker.Item label = "BS - Entertainment and Multimedia Computing" value="bsemc" style = {styles.pickeritem} />
-                                <Picker.Item label = "BS - Information Systems" value="bsis" style = {styles.pickeritem} />
-                                </Picker>
-                            </View>
+                        <Text style = {styles.label}>Course</Text>
+                        <View style = {styles.picker}>
+                            <Picker
+                                selectedValue = {course}
+                                onValueChange = {(itemValue, itemIndex) =>
+                                inputCourse(itemValue)
+                            }>
+                            <Picker.Item label = "BMMA - Animation" value="bmma-a" style = {styles.pickeritem} />
+                            <Picker.Item label = "BMMA - Graphic Design" value="bmma-gd" style = {styles.pickeritem} />
+                            <Picker.Item label = "BMMA - Video and Film Production" value="bmma-fvp" style = {styles.pickeritem} />
+                            <Picker.Item label = "BS - Computer Science" value="bscs" style = {styles.pickeritem} />
+                            <Picker.Item label = "BS - Entrepreneurship" value="bsentrep" style = {styles.pickeritem} />
+                            <Picker.Item label = "BS - Entertainment and Multimedia Computing" value="bsemc" style = {styles.pickeritem} />
+                            <Picker.Item label = "BS - Information Systems" value="bsis" style = {styles.pickeritem} />
+                            </Picker>
                         </View>
-                        <View style = {styles.column}>
-                            <Text style = {styles.label}>Year</Text>
-                            <View style = {styles.picker}>
-                                <Picker
-                                    selectedValue = {year}
-                                    onValueChange = {(itemValue, itemIndex) =>
-                                    inputYear(itemValue)
-                                }>
-                                <Picker.Item label = "First Year" value="firstyr" style = {styles.pickeritem} />
-                                <Picker.Item label = "Second Year" value="secondyr" style = {styles.pickeritem} />
-                                <Picker.Item label = "Third Year" value="thirdyr" style = {styles.pickeritem} />
-                                <Picker.Item label = "Fourth Year" value="fourthyr" style = {styles.pickeritem} />
-                                <Picker.Item label = "Irregular / Prefer not to say / Others" value="other" style = {styles.pickeritem} />
-                                </Picker>
-                            </View>
+                        <Text style = {styles.label}>Year</Text>
+                        <View style = {styles.picker}>
+                            <Picker
+                                selectedValue = {year}
+                                onValueChange = {(itemValue, itemIndex) =>
+                                inputYear(itemValue)
+                            }>
+                            <Picker.Item label = "First Year" value="firstyr" style = {styles.pickeritem} />
+                            <Picker.Item label = "Second Year" value="secondyr" style = {styles.pickeritem} />
+                            <Picker.Item label = "Third Year" value="thirdyr" style = {styles.pickeritem} />
+                            <Picker.Item label = "Fourth Year" value="fourthyr" style = {styles.pickeritem} />
+                            <Picker.Item label = "Irregular / Prefer not to say / Others" value="other" style = {styles.pickeritem} />
+                            </Picker>
                         </View>
-                    </View>
-
 
                     <Text style = {styles.label}>Bio (Optional)</Text>
                     <TextInput
@@ -145,7 +139,14 @@ export default function CreateProfile({ goTo }) {
                         <Picker.Item label = "All of the above! / Multiple" value="all" style = {styles.pickeritem} />
                         </Picker>
                     </View>
-                    <Text style = {styles.label}>Card Design</Text>
+                    <Text style = {styles.label}>Profile Background Color</Text>
+                    <View style = {styles.bgcontainer}>
+                        <View style = {styles.bgchild}><FontAwesome name="circle" size={36} color="aliceblue" /></View>
+                        <View style = {styles.bgchild}><FontAwesome name="circle" size={36} color="lightgoldenrodyellow" /></View>
+                        <View style = {styles.bgchild}><FontAwesome name="circle" size={36} color="lavenderblush" /></View> 
+                        <View style = {styles.bgchild}><FontAwesome name="circle" size={36} color="lavender" /></View> 
+                        <View style = {styles.bgchild}><FontAwesome name="circle" size={36} color="lightgreen" /></View> 
+                    </View>
                 </View>
                 <View style = {styles.colcontainer}>
                     <View style = {styles.column}>
@@ -232,6 +233,7 @@ const styles = StyleSheet.create({
     },
 
     picker: {
+        width: 290,
         borderWidth: 1,
         borderColor: '#A8A8A9',
         borderRadius: 15,
@@ -264,5 +266,18 @@ const styles = StyleSheet.create({
         color: 'white',
         fontFamily: 'HelveticaNeueRoman',
         fontSize: 13
+    },
+    
+    bgcontainer: {
+        height: 70,
+        width: 300,
+        flexDirection: 'row', 
+        // Optional: Add alignment for children within the row
+        alignItems: 'center',
+        justifyContent: 'space-around', 
+    },
+    bgchild: {
+        padding: 10,
+        margin: 5,
     },
 });

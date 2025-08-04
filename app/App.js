@@ -6,6 +6,9 @@ import CreateProfile from './CreateProfile';
 import ProfilePreview from './ProfilePreview';
 import Notifications from './Notifications';
 import Account from './Account';
+import Messages from './Messages';
+import Chat from './Chat';
+
 
 export default function App() {
   const [page, switchPage] = useState('login');
@@ -17,4 +20,6 @@ export default function App() {
   if (page === 'profilepreview') return <ProfilePreview goTo={switchPage}/>;
   if (page === 'notifications') return <Notifications goTo = {switchPage}/>;
   if (page === 'account') return <Account goTo = {switchPage}/>;
+  if (page === 'messages') return <Messages goTo = {switchPage}/>;
+  if (page === 'chat') return <Chat goTo = {switchPage}/>;
 }

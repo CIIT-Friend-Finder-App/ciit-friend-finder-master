@@ -251,7 +251,9 @@ export default function Notifications({ goTo }) {
         <Pressable onPress={() => goTo('landing')}>
           <MaterialCommunityIcons name="cards" size={35} color="#FCA5B4" />
         </Pressable>
-        <FontAwesome name="wechat" size={30} color="#FCA5B4" />
+          <Pressable onPress={() => goTo('messages')}>
+              <FontAwesome name="wechat" size={30} color="#FCA5B4" />
+          </Pressable>
         <View style={styles.selectedNav}>
           <Pressable onPress={() => goTo('notifications')}>
             <Ionicons name="notifications" size={30} color="white" />

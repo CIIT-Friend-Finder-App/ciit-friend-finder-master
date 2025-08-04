@@ -435,7 +435,9 @@ export default function Landing({ goTo }) {
                     <MaterialCommunityIcons name="cards" size={35} color="white" />
                     <Text style={{ color: 'white' }}>Meet</Text>
                 </View>
-                <FontAwesome name="wechat" size={30} color="#FCA5B4" />
+                <Pressable onPress={() => goTo('messages')}>
+                    <FontAwesome name="wechat" size={30} color="#FCA5B4" />
+                </Pressable>
                 <Pressable onPress={() => goTo('notifications')}>
                     <Ionicons name="notifications" size={30} color="#FCA5B4" />
                 </Pressable>
